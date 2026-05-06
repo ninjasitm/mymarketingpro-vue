@@ -7,21 +7,21 @@ description: "Project-specific coding patterns and shared utilities for mymarket
 
 ## State management
 
-- State modules live in `{{STATE_DIR}}`.
-- Use {{STATE_MANAGEMENT}} for state management.
-- {{STATE_PATTERN_DESCRIPTION}}
+- State modules live in `src/composables`.
+- Use Composition API with provide/inject for state management.
+- State managed via composables and Vue's provide/inject
 
 ## API patterns
 
-- API services live in `{{SERVICES_DIR}}`.
-- {{API_PATTERN_DESCRIPTION}}
+- API services live in `src/services`.
+- Services in src/services/ encapsulate all API calls
 
 ## Component patterns
 
-- Components follow {{COMPONENT_PATTERN}} pattern.
-- {{COMPONENT_PATTERN_DESCRIPTION}}
+- Components follow Composition API pattern.
+- Composition API with provide/inject for plugin-level state
 
 ## Utilities
 
-- Shared utilities live in `{{UTILS_DIR}}`.
-- {{UTILITY_PATTERN_DESCRIPTION}}
+- Shared utilities live in `src/utils`.
+- Pure functions in src/utils/

@@ -7,14 +7,14 @@ description: "Deployment configuration and commands for mymarketingpro-vue."
 
 ## Target Platform
 
-- **Platform:** {{DEPLOY_PLATFORM}}
+- **Platform:** npm
 - **Environment:** {{ENVIRONMENT}}
 
 ## Deploy Commands
 
 ```bash
-# Deploy to {{DEPLOY_PLATFORM}}
-{{DEPLOY_COMMAND}}
+# Deploy to npm
+npm publish
 
 # Build for production
 npm run build

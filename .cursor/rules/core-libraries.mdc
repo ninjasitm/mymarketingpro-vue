@@ -4,7 +4,7 @@ globs:
 alwaysApply: agent
 ---
 
-- Use {{UTILITY_LIBRARY}} for common utilities.
-- Use {{STATE_MANAGEMENT}} for state management.
+- Use native ES6+ for common utilities.
+- Use Composition API with provide/inject for state management.
 - Use CSS / SCSS for styling; prefer utility classes over custom CSS.
-- Use {{UI_LIBRARY}} for UI components; check existing components before creating new ones.
+- Use N/A (headless plugin) for UI components; check existing components before creating new ones.

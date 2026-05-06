@@ -5,10 +5,10 @@ description: "Coding standards, patterns, and conventions for mymarketingpro-vue
 
 # Coding Standards
 
-## Primary Pattern: {{PRIMARY_PATTERN_NAME}}
+## Primary Pattern: Composition API Plugin
 
 ```ts
-{{PRIMARY_PATTERN_EXAMPLE}}
+useMyMarketingPro() composable
 ```
 
 **Rules:**
@@ -20,24 +20,24 @@ description: "Coding standards, patterns, and conventions for mymarketingpro-vue
 ## Data Access Pattern
 
 ```ts
-{{DATA_ACCESS_PATTERN}}
+Service layer in src/services/
 ```
 
 ## API / Route Pattern
 
 ```ts
-{{API_PATTERN}}
+Service class pattern
 ```
 
 ## Naming Conventions
 
-- Files: {{FILE_NAMING_CONVENTION}}
-- Components: {{COMPONENT_NAMING_CONVENTION}}
-- Functions: {{FUNCTION_NAMING_CONVENTION}}
-- Variables: {{VARIABLE_NAMING_CONVENTION}}
+- Files: kebab-case for files, PascalCase for Vue components
+- Components: PascalCase (e.g., MmpButton.vue)
+- Functions: camelCase
+- Variables: camelCase
 
 ## Code Quality
 
 - Follow Vue 3 and TypeScript best practices
 - Run linting before committing: `npm run lint`
-- Format code consistently: `{{FORMAT_COMMAND}}`
+- Format code consistently: `npm run format`

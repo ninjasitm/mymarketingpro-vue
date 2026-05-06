@@ -19,12 +19,12 @@ description: "Project architecture and data flow for mymarketingpro-vue."
 
 ## Data flow
 
-- {{DATA_FLOW_DESCRIPTION}}
+- Components → Composables → Services → API
 
 ## Authentication
 
-- {{AUTH_DESCRIPTION}}
+- Authentication via apiKey plugin option passed to services
 
 ## API integration
 
-- {{API_INTEGRATION_DESCRIPTION}}
+- Integrates with MyMarketingPro REST API via fetch

@@ -3,7 +3,7 @@
 **Language:** TypeScript
 **Framework:** Vue 3
 **Package Manager:** npm
-**Deploy:** {{DEPLOY_PLATFORM}} | **Dev:** localhost:5173
+**Deploy:** npm | **Dev:** localhost:5173
 
 ## Overview
 

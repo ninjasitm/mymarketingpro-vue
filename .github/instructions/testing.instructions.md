@@ -12,7 +12,7 @@ description: "Testing standards and conventions for mymarketingpro-vue."
 npm run test
 
 # Run tests with coverage
-{{TEST_COVERAGE_COMMAND}}
+npm run test:coverage
 
 # Run E2E tests
 {{E2E_TEST_COMMAND}}
@@ -26,18 +26,18 @@ npm run test
 
 ## Test File Naming
 
-- Unit tests: `{{TEST_FILE_PATTERN}}`
-- Integration tests: `{{INTEGRATION_TEST_PATTERN}}`
+- Unit tests: `*.test.ts`
+- Integration tests: `*.integration.test.ts`
 - E2E tests: `{{E2E_TEST_PATTERN}}`
 
 ## Test Location
 
 - Unit tests live alongside source files or in `tests/`
-- Integration tests in `{{INTEGRATION_TEST_DIR}}/`
+- Integration tests in `tests/integration/`
 - E2E tests in `{{E2E_TEST_DIR}}/`
 
 ## Coverage Requirements
 
-- Minimum coverage: {{COVERAGE_THRESHOLD}}
+- Minimum coverage: 80%
 - Critical paths must have integration or E2E coverage
 - New features require tests before merging

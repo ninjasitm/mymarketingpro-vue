@@ -4,8 +4,8 @@ globs:
 alwaysApply: agent
 ---
 
-- {{API_ROUTE_PATTERN}}
+- /api/v1/{resource}
 - Validate all input data before processing.
 - Return consistent response formats.
 - Use proper HTTP status codes.
-- Document API endpoints in {{API_DOCS_LOCATION}}.
+- Document API endpoints in docs/api.

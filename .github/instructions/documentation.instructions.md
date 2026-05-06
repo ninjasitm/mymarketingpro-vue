@@ -57,7 +57,7 @@ Create feature documentation for:
 
 **Status**: Draft | In Progress | Completed
 **Created**: {{Date}}
-**Issue**: [{{ISSUE_ID}}]({{ISSUE_TRACKER_URL}})
+**Issue**: [{{ISSUE_ID}}](https://github.com/ninjasitm/mymarketingpro-vue/issues)
 
 ## Overview
 
@@ -381,7 +381,7 @@ Follow [Keep a Changelog](https://keepachangelog.com/) format:
 
 ### Fixed
 
-- Bug causing issue A ([#123]({{ISSUE_TRACKER_URL}}))
+- Bug causing issue A ([#123](https://github.com/ninjasitm/mymarketingpro-vue/issues))
 - Memory leak in component B
 
 ### Security
