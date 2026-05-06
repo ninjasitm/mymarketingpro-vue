@@ -9,37 +9,6 @@ Vue 3 plugin for MyMarketingPro.com — provides components, composables, and ut
 - **Styling:** CSS / SCSS
 - **Package Manager:** npm
 
-## Template Placeholders
-
-The following placeholders must be replaced when customizing this template:
-
-| Placeholder             | Description                                                |
-| ----------------------- | ---------------------------------------------------------- |
-| mymarketingpro-vue        | Project name (kebab-case).                                 |
-| Vue 3 plugin for MyMarketingPro.com — provides components, composables, and utilities for integrating with the MyMarketingPro platform API. | Short description of the project.                          |
-| Vue 3           | Primary framework (with version if applicable).            |
-| TypeScript            | Primary programming language (with version if applicable). |
-| CSS / SCSS             | Styling solution (e.g., Tailwind, CSS Modules).            |
-| npm     | Package manager (npm, pnpm, yarn, bun).                    |
-| 18+        | Required Node.js version.                                  |
-| https://github.com/ninjasitm/mymarketingpro-vue            | Repository URL.                                            |
-| 5173            | Development server port.                                   |
-| src/
-│   ├── index.ts
-│   ├── plugin.ts
-│   ├── components/
-│   ├── composables/
-│   ├── services/
-│   ├── types/
-│   └── utils/
-├── tests/
-├── docs/       | High-level source folder structure.                        |
-| MIT        | License identifier (e.g., MIT, Apache-2.0).                |
-| src             | Source directory (e.g., src, app, lib).                    |
-| tests            | Test directory (e.g., tests, test, spec).                  |
-| ts      | Primary file extension (e.g., ts, js, tsx).                |
-| main      | Default git branch (e.g., main, master).                   |
-
 ## Getting Started
 
 ### Prerequisites
@@ -56,43 +25,57 @@ cd mymarketingpro-vue
 
 # Install dependencies
 npm install
-
-# Start development server
-npm run dev
 ```
 
-The development server will start at `http://localhost:5173`.
+### Usage
+
+```typescript
+import { createApp } from 'vue'
+import { MyMarketingProPlugin } from 'mymarketingpro-vue'
+import App from './App.vue'
+
+const app = createApp(App)
+
+app.use(MyMarketingProPlugin, {
+  baseUrl: 'https://api.mymarketingpro.com',
+  apiKey: 'your-api-key',
+})
+
+app.mount('#app')
+```
 
 ## Project Structure
 
 ```
 mymarketingpro-vue/
 ├── src/
-│   ├── src/
-│   ├── index.ts
-│   ├── plugin.ts
-│   ├── components/
-│   ├── composables/
-│   ├── services/
-│   ├── types/
-│   └── utils/
+│   ├── index.ts           # Plugin entry point
+│   ├── plugin.ts          # Vue plugin definition
+│   ├── components/        # Vue components
+│   ├── composables/       # Vue composables (useXxx)
+│   ├── services/          # API service layer
+│   ├── types/             # TypeScript type definitions
+│   └── utils/             # Utility functions
 ├── tests/
+│   └── unit/              # Unit tests (Vitest)
 ├── docs/
-├── tests/
-├── docs/
-├── .cursor/           # Cursor IDE configuration
-├── .github/           # GitHub configuration
+│   ├── api/               # API documentation
+│   ├── architecture/      # Architecture decision records
+│   ├── features/          # Feature specs and plans
+│   └── fixes/             # Fix logs
+├── .cursor/               # Cursor IDE configuration
+├── .github/               # GitHub Copilot configuration
 └── package.json
 ```
 
 ## Scripts
 
-| Command                         | Description              |
-| ------------------------------- | ------------------------ |
-| `npm run dev`   | Start development server |
-| `npm run build` | Build for production     |
-| `npm run test`  | Run tests                |
-| `npm run lint`  | Run linter               |
+| Command              | Description              |
+| -------------------- | ------------------------ |
+| `npm run dev`        | Start development server |
+| `npm run build`      | Build for production     |
+| `npm run test`       | Run tests                |
+| `npm run lint`       | Run linter               |
 
 ## Development
 
@@ -111,7 +94,7 @@ This repository includes AI instruction files to standardize development workflo
 - `/specify` — Create or refine a feature specification.
 - `/plan` — Produce an implementation plan with steps and dependencies.
 - `/tasks` — Break work into actionable tasks.
-- `/assign-tasks` — Convert requirements into tickets in `GitHub Issues`.
+- `/assign-tasks` — Convert requirements into tickets in GitHub Issues.
 
 ### Implementing
 

@@ -13,7 +13,7 @@ Vue 3 plugin for MyMarketingPro.com — provides components, composables, and ut
 
 ```
 mymarketingpro-vue/
-src/
+├── src/
 │   ├── index.ts
 │   ├── plugin.ts
 │   ├── components/
