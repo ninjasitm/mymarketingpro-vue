@@ -46,4 +46,5 @@ export function createMyMarketingPro(options: MyMarketingProPluginOptions = {}):
  */
 export const MyMarketingProPlugin: Plugin = createMyMarketingPro()
 
+
 export default MyMarketingProPlugin

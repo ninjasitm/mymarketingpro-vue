@@ -1,0 +1,10 @@
+---
+description: Development environment and tooling standards
+globs:
+alwaysApply: agent
+---
+
+- Tailor commands to the user's OS and shell.
+- Use `npm` for package management.
+- Use Vite for build and dev server; use vite-plugin-dts for TypeScript declaration generation
+- Use Vitest for unit tests; use @vue/test-utils for component testing

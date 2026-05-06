@@ -1,0 +1,10 @@
+---
+description: Core libraries and frameworks used in mymarketingpro-vue
+globs:
+alwaysApply: agent
+---
+
+- Use native ES6+ for common utilities.
+- Use Composition API with provide/inject for state management.
+- Use CSS / SCSS for styling; prefer utility classes over custom CSS.
+- Use N/A (headless plugin) for UI components; check existing components before creating new ones.
