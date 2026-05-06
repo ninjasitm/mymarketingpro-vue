@@ -11,7 +11,6 @@
 //   runtimeConfig.mmpApiKey          — private API key (server-side only)
 
 // #app is a Nuxt virtual module resolved at build time by Nuxt's Vite/Webpack layer.
-// eslint-disable-next-line import/no-unresolved
 import { defineNuxtPlugin, useRuntimeConfig } from '#app'
 import { createMyMarketingPro } from './plugin'
 import type { MyMarketingProPluginOptions } from './types'
