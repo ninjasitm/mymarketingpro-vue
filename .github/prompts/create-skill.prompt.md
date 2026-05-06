@@ -18,12 +18,12 @@ This project uses the following structure for skills:
 
 **Current Codebase Context**:
 
-- **Language**: C# / .NET 9.0
-- **Architecture**: Clean Architecture with SOLID principles, Domain-Driven Design
-- **UI Framework**: Radzen Blazor components
-- **Database**: Entity Framework Core 9.0 with SQL Server
-- **Project**: Mental wellness platform (Blackfullness/MindfulYou)
-- **Key Features**: Meditation practices, mood tracking, gamification, journaling
+- **Language**: TypeScript
+- **Framework**: Vue 3 (Composition API, `<script setup>`)
+- **Build Tool**: Vite with vite-plugin-dts
+- **Test Framework**: Vitest with @vue/test-utils
+- **Project**: mymarketingpro-vue — Vue 3 plugin for MyMarketingPro.com
+- **Key Features**: Plugin installation, composables, components, services, API integration
 
 **Existing Instructions**: The project has instructions in `.github/instructions/` that may be candidates for conversion to skills.
 

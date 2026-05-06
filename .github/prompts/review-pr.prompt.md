@@ -10,7 +10,7 @@ Conduct comprehensive code review for pull requests with structured fix tracking
 
 ```bash
 /review-pr 42
-/review-pr https://github.com/{{REPO_OWNER}}/mymarketingpro-vue/pull/42
+/review-pr https://github.com/ninjasitm/mymarketingpro-vue/pull/42
 ```
 
 ## Orchestrator Checkpoint

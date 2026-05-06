@@ -182,10 +182,10 @@ gh label delete "old-label" --yes
 
 ```bash
 # List milestones
-gh api repos/{{REPO_OWNER}}/mymarketingpro-vue/milestones --jq '.[].title'
+gh api repos/ninjasitm/mymarketingpro-vue/milestones --jq '.[].title'
 
 # Create milestone
-gh api repos/{{REPO_OWNER}}/mymarketingpro-vue/milestones -f title="v1.0" -f description="First release" -f due_on="2025-06-01T00:00:00Z"
+gh api repos/ninjasitm/mymarketingpro-vue/milestones -f title="v1.0" -f description="First release" -f due_on="2025-06-01T00:00:00Z"
 ```
 
 ## Common Workflows

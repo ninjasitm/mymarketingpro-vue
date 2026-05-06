@@ -1,26 +1,26 @@
 ---
 name: logging
-description: Comprehensive logging standards for C# applications including structured logging, log levels, message formatting, and compliance guidelines
+description: Logging standards for TypeScript/Vue 3 applications including console logging, structured log levels, and debugging guidelines
 version: 1.0.0
-author: BlackFULLness Platform Team
+author: mymarketingpro-vue
 created: 2026-01-26
 updated: 2026-01-26
 tags:
   - logging
-  - csharp
+  - typescript
+  - vue3
   - structured-logging
   - observability
   - debugging
 applies_to:
-  - "**/*.cs"
-  - "Services/**/*"
-  - "Controllers/**/*"
-  - "Api/**/*"
+  - "**/*.ts"
+  - "**/*.vue"
+  - "src/**/*"
 ---
 
-# Logging Standards for C# Applications
+# Logging Standards for TypeScript / Vue 3
 
-Comprehensive logging guidelines for consistent, structured, and maintainable logging across C# applications with emphasis on mental wellness platform requirements.
+Logging guidelines for consistent, structured, and maintainable logging across TypeScript and Vue 3 applications within the MyMarketingPro platform.
 
 ## Core Logging Principles
 

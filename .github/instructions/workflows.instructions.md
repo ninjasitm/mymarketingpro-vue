@@ -26,5 +26,5 @@ description: "Developer workflows and environment settings for mymarketingpro-vu
 
 | Variable        | Purpose            | Required |
 | --------------- | ------------------ | -------- |
-| `{{ENV_VAR_1}}` | {{ENV_VAR_1_DESC}} | Yes      |
-| `{{ENV_VAR_2}}` | {{ENV_VAR_2_DESC}} | No       |
+| `VITE_API_BASE_URL` | Base URL for the MyMarketingPro API | Yes      |
+| `VITE_API_KEY` | API key for MyMarketingPro platform authentication | No       |

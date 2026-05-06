@@ -15,26 +15,35 @@ npm run test
 npm run test:coverage
 
 # Run E2E tests
-{{E2E_TEST_COMMAND}}
+N/A (no E2E tests configured for this plugin library)
 ```
 
 ## Test Structure
 
 ```ts
-{{TEST_EXAMPLE}}
+import { describe, it, expect } from 'vitest'
+import { createApp } from 'vue'
+import { MyMarketingProPlugin } from '../../src'
+
+describe('MyMarketingProPlugin', () => {
+  it('installs without errors', () => {
+    const app = createApp({})
+    expect(() => app.use(MyMarketingProPlugin)).not.toThrow()
+  })
+})
 ```
 
 ## Test File Naming
 
 - Unit tests: `*.test.ts`
 - Integration tests: `*.integration.test.ts`
-- E2E tests: `{{E2E_TEST_PATTERN}}`
+- E2E tests: `N/A`
 
 ## Test Location
 
 - Unit tests live alongside source files or in `tests/`
 - Integration tests in `tests/integration/`
-- E2E tests in `{{E2E_TEST_DIR}}/`
+- E2E tests in `N/A/`
 
 ## Coverage Requirements
 

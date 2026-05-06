@@ -39,7 +39,7 @@ You are an administrator portal specialist. You build secure, efficient admin in
 
 | Stack             | Monitoring & Ops Tools                                                                     |
 | ----------------- | ------------------------------------------------------------------------------------------ |
-| **Vue 3** | {{ADMIN_MONITORING_TOOLS}}                                                                 |
+| **Vue 3** | N/A — this is a Vue 3 plugin library, not an admin portal application                                                                 |
 | Laravel           | Horizon (queues), Telescope (debugging), Pulse (performance), Nova/Filament (admin panels) |
 | Django            | Django Admin, Celery Flower (tasks), django-debug-toolbar, Silk (profiling)                |
 | Next.js / Node    | Bull Board (queues), AdminJS, custom dashboards                                            |

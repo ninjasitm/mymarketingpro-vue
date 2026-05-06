@@ -78,14 +78,10 @@ Implement bug fixes and corrections with proper validation and documentation.
 
    | File | Issue | Fix |
    | ---- | ----- | --- |
-   | `PostsCategory.php` | Missing `BelongsTo` import → fatal runtime error | Added `use Illuminate\Database\Eloquent\Relations\BelongsTo;` |
-   | `PostsCategory.php` | Timestamp constants with no DB columns | Replaced `CREATED_AT`/`UPDATED_AT` constants with `public $timestamps = false` |
-   | `Metadata.php` | `deleted_at` cast with no SoftDeletes/column | Removed spurious `'deleted_at' => 'datetime'` cast |
-   | `Metadata.php` | Two unreachable `break` after `return` | Removed the dead `break` statements |
-   | `Follow.php` | `end_date` missing from `$casts` | Added `'end_date' => 'datetime'` |
-   | `Follow.php` | `end_date` assigned twice in `beforeDelete()` | Removed the redundant first assignment |
-   | `LoginController.php` | `Request` used but not imported → fatal error | Added `use Illuminate\Http\Request;` |
-   | `RegisterController.php` | Unused `Str` import | Removed `use Illuminate\Support\Str;` |
+   | `src/plugin.ts` | Missing type import for `App` → TypeScript error | Added `import type { App } from 'vue'` |
+   | `src/types/index.ts` | Interface missing optional field | Added `locale?: string` to `MyMarketingProPluginOptions` |
+   | `src/composables/useApi.ts` | Unhandled promise rejection | Wrapped fetch call in try/catch and returned error state |
+   | `src/utils/formatDate.ts` | Invalid date returns `NaN` | Added guard for invalid Date input |
    ```
 
    Every fix must appear in this table — one row per file+issue pair.

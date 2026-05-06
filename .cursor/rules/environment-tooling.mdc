@@ -6,5 +6,5 @@ alwaysApply: agent
 
 - Tailor commands to the user's OS and shell.
 - Use `npm` for package management.
-- {{TOOLING_RULE_1}}
-- {{TOOLING_RULE_2}}
+- Use Vite for build and dev server; use vite-plugin-dts for TypeScript declaration generation
+- Use Vitest for unit tests; use @vue/test-utils for component testing

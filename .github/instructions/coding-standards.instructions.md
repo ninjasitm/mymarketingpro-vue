@@ -13,9 +13,9 @@ useMyMarketingPro() composable
 
 **Rules:**
 
-- {{CODING_RULE_1}}
-- {{CODING_RULE_2}}
-- {{CODING_RULE_3}}
+- Use TypeScript strict mode; all functions must have explicit return types
+- Vue components must use `<script setup lang="ts">` with Composition API
+- All public API exports must be documented with JSDoc comments
 
 ## Data Access Pattern
 
