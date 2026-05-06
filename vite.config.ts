@@ -16,12 +16,14 @@ export default defineConfig({
   ],
   build: {
     lib: {
-      entry: resolve(__dirname, 'src/index.ts'),
+      entry: {
+        'mymarketingpro-vue': resolve(__dirname, 'src/index.ts'),
+        nuxt: resolve(__dirname, 'src/nuxt.ts'),
+      },
       name: 'MyMarketingProVue',
-      fileName: 'mymarketingpro-vue',
     },
     rollupOptions: {
-      external: ['vue'],
+      external: ['vue', '#app', '#imports'],
       output: {
         globals: {
           vue: 'Vue',
@@ -37,5 +39,8 @@ export default defineConfig({
   test: {
     globals: true,
     environment: 'jsdom',
+    alias: {
+      '#app': resolve(__dirname, 'tests/stubs/nuxt-app.ts'),
+    },
   },
 })

@@ -7,7 +7,9 @@
     "tsBuildInfoFile": "./node_modules/.tmp/tsconfig.app.tsbuildinfo",
     "baseUrl": ".",
     "paths": {
-      "@/*": ["./src/*"]
+      "@/*": ["./src/*"],
+      "#app": ["./node_modules/nuxt/dist/app/index.d.ts"],
+      "#imports": ["./node_modules/nuxt/dist/app/composables/index.d.ts"]
     },
     "declaration": true,
     "declarationDir": "./dist"

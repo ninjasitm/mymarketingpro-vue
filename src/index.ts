@@ -1,4 +1,4 @@
-export { default as MyMarketingProPlugin } from './plugin'
+export { createMyMarketingPro, MyMarketingProPlugin, default } from './plugin'
 export * from './components'
 export * from './composables'
 export * from './services'
