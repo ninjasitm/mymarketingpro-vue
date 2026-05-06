@@ -1,0 +1,11 @@
+---
+description: TypeScript and Vue 3 development standards
+globs:
+alwaysApply: agent
+---
+
+- All code must be TypeScript. No `any` types except when strictly necessary
+- Use `<script setup lang="ts">` for all SFCs
+- Follow Vue 3's recommended folder and naming conventions.
+- Keep functions focused and manageable (under 50-75 lines).
+- Use try-catch for async operations; leverage Vue 3 error utilities.
