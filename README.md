@@ -9,47 +9,68 @@ Vue 3 plugin for MyMarketingPro.com — provides components, composables, and ut
 - **Styling:** CSS / SCSS
 - **Package Manager:** npm
 
-## Getting Started
-
-### Prerequisites
-
-- Node.js 18+
-- npm
-
-### Installation
+## Installation
 
 ```bash
-# Clone the repository
-git clone https://github.com/ninjasitm/mymarketingpro-vue
-cd mymarketingpro-vue
-
-# Install dependencies
-npm install
+npm install mymarketingpro-vue
 ```
 
-### Usage
+## Usage
+
+### Vue 3
 
 ```typescript
 import { createApp } from 'vue'
-import { MyMarketingProPlugin } from 'mymarketingpro-vue'
+import { createMyMarketingPro } from 'mymarketingpro-vue'
 import App from './App.vue'
 
 const app = createApp(App)
 
-app.use(MyMarketingProPlugin, {
+app.use(createMyMarketingPro({
   baseUrl: 'https://api.mymarketingpro.com',
   apiKey: 'your-api-key',
-})
+}))
 
 app.mount('#app')
 ```
+
+### Nuxt
+
+Register the plugin in `nuxt.config.ts`:
+
+```typescript
+// nuxt.config.ts
+export default defineNuxtConfig({
+  plugins: ['mymarketingpro-vue/nuxt'],
+
+  runtimeConfig: {
+    // Server-side only (private)
+    mmpApiKey: process.env.MMP_API_KEY,
+
+    public: {
+      // Exposed to the client
+      mmpBaseUrl: process.env.MMP_BASE_URL,
+      mmpLocale: process.env.MMP_LOCALE,
+    },
+  },
+})
+```
+
+| Runtime config key                  | Visibility      | Description                      |
+| ----------------------------------- | --------------- | -------------------------------- |
+| `runtimeConfig.mmpApiKey`           | Server-side     | Private API key                  |
+| `runtimeConfig.public.mmpBaseUrl`   | Client + Server | Base URL for the MMP API         |
+| `runtimeConfig.public.mmpLocale`    | Client + Server | Default locale (e.g. `en-US`)    |
+
+All keys are optional — omit any that are not needed.
 
 ## Project Structure
 
 ```
 mymarketingpro-vue/
 ├── src/
-│   ├── index.ts           # Plugin entry point
+│   ├── index.ts           # Vue plugin entry point
+│   ├── nuxt.ts            # Nuxt plugin entry point
 │   ├── plugin.ts          # Vue plugin definition
 │   ├── components/        # Vue components
 │   ├── composables/       # Vue composables (useXxx)
