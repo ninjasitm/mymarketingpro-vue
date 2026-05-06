@@ -56,11 +56,11 @@ export default defineNuxtConfig({
 })
 ```
 
-| Runtime config key              | Visibility     | Description                     |
-| ------------------------------- | -------------- | ------------------------------- |
-| `runtimeConfig.mmpApiKey`       | Server-side    | Private API key                 |
-| `runtimeConfig.public.mmpBaseUrl` | Client + Server | Base URL for the MMP API      |
-| `runtimeConfig.public.mmpLocale` | Client + Server | Default locale (e.g. `en-US`) |
+| Runtime config key                  | Visibility      | Description                      |
+| ----------------------------------- | --------------- | -------------------------------- |
+| `runtimeConfig.mmpApiKey`           | Server-side     | Private API key                  |
+| `runtimeConfig.public.mmpBaseUrl`   | Client + Server | Base URL for the MMP API         |
+| `runtimeConfig.public.mmpLocale`    | Client + Server | Default locale (e.g. `en-US`)    |
 
 All keys are optional — omit any that are not needed.
 
