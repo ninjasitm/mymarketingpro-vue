@@ -39,5 +39,8 @@ export default defineConfig({
   test: {
     globals: true,
     environment: 'jsdom',
+    alias: {
+      '#app': resolve(__dirname, 'tests/stubs/nuxt-app.ts'),
+    },
   },
 })

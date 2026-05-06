@@ -20,9 +20,9 @@ export default defineNuxtPlugin((nuxtApp) => {
   const runtimeConfig = useRuntimeConfig()
 
   const options: MyMarketingProPluginOptions = {
-    baseUrl: (runtimeConfig.public?.mmpBaseUrl as string) || undefined,
-    apiKey: (runtimeConfig.mmpApiKey as string) || undefined,
-    locale: (runtimeConfig.public?.mmpLocale as string) || undefined,
+    baseUrl: runtimeConfig.public?.mmpBaseUrl as string | undefined,
+    apiKey: runtimeConfig.mmpApiKey as string | undefined,
+    locale: runtimeConfig.public?.mmpLocale as string | undefined,
   }
 
   nuxtApp.vueApp.use(createMyMarketingPro(options))

@@ -2,6 +2,9 @@ import { describe, it, expect, vi } from 'vitest'
 import { createApp } from 'vue'
 import { createMyMarketingPro, MyMarketingProPlugin } from '../../src'
 
+// nuxt.ts imports #app which is aliased to the stub in vitest config
+import nuxtPlugin from '../../src/nuxt'
+
 describe('createMyMarketingPro', () => {
   it('returns an installable Vue plugin', () => {
     const plugin = createMyMarketingPro()
@@ -73,22 +76,12 @@ describe('MyMarketingProPlugin (default instance)', () => {
 })
 
 describe('Nuxt plugin entryway (src/nuxt.ts)', () => {
-  it('calls vueApp.use with the plugin created from runtime config', async () => {
+  it('calls vueApp.use with the plugin created from runtime config', () => {
     const useSpy = vi.fn()
     const nuxtApp = {
       vueApp: { use: useSpy },
     }
 
-    // Stub #app before dynamic import
-    vi.doMock('#app', () => ({
-      defineNuxtPlugin: (fn: (app: typeof nuxtApp) => void) => fn,
-      useRuntimeConfig: () => ({
-        public: { mmpBaseUrl: 'https://cfg.example.com', mmpLocale: 'en' },
-        mmpApiKey: 'cfg-key',
-      }),
-    }))
-
-    const { default: nuxtPlugin } = await import('../../src/nuxt')
     nuxtPlugin(nuxtApp as never)
 
     expect(useSpy).toHaveBeenCalledOnce()
