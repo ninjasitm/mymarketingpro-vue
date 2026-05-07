@@ -33,7 +33,7 @@ jobs:
         run: npm test
 
       - name: Build library
-        run: npm run build
+        run: npx vite build
 
       - name: Save current tag
         run: echo "TAG_NAME=${GITHUB_REF#refs/tags/}" >> $GITHUB_ENV

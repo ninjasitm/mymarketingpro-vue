@@ -1,0 +1,1 @@
+"use strict";const n=require("#app"),r=require("./mymarketingpro-vue.cjs"),u=n.defineNuxtPlugin(o=>{var i,t;const e=n.useRuntimeConfig(),p={baseUrl:(i=e.public)==null?void 0:i.mmpBaseUrl,apiKey:e.mmpApiKey,locale:(t=e.public)==null?void 0:t.mmpLocale};o.vueApp.use(r.createMyMarketingPro(p))});module.exports=u;

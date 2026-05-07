@@ -1,0 +1,1 @@
+"use strict";Object.defineProperties(exports,{__esModule:{value:!0},[Symbol.toStringTag]:{value:"Module"}});function t(e={}){return{install(r){r.provide("mymarketingpro-options",e),e.baseUrl&&(r.config.globalProperties.$mmpBaseUrl=e.baseUrl)}}}const i=t();exports.MyMarketingProPlugin=i;exports.createMyMarketingPro=t;exports.default=i;
