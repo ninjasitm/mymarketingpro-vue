@@ -2,8 +2,10 @@ import { describe, it, expect, vi } from 'vitest'
 import { createApp } from 'vue'
 import { createMyMarketingPro, MyMarketingProPlugin } from '../../src'
 
-// nuxt.ts imports #app which is aliased to the stub in vitest config
-import nuxtPlugin from '../../src/nuxt'
+// nuxt/app is aliased to the stub in vitest config
+import runtimePlugin from '../../src/runtime/plugin'
+// @nuxt/kit is aliased to the stub in vitest config
+import nuxtModule from '../../src/nuxt'
 
 describe('createMyMarketingPro', () => {
   it('returns an installable Vue plugin', () => {
@@ -75,14 +77,29 @@ describe('MyMarketingProPlugin (default instance)', () => {
   })
 })
 
-describe('Nuxt plugin entryway (src/nuxt.ts)', () => {
+describe('Nuxt module (src/nuxt.ts)', () => {
+  it('is a Nuxt module definition with correct meta', () => {
+    const mod = nuxtModule as Record<string, unknown>
+    expect(mod).toHaveProperty('meta')
+    const meta = mod.meta as Record<string, unknown>
+    expect(meta.name).toBe('mymarketingpro-vue')
+    expect(meta.configKey).toBe('myMarketingPro')
+  })
+
+  it('has a setup function that registers the runtime plugin', () => {
+    const mod = nuxtModule as Record<string, unknown>
+    expect(typeof mod.setup).toBe('function')
+  })
+})
+
+describe('Nuxt runtime plugin (src/runtime/plugin.ts)', () => {
   it('calls vueApp.use with the plugin created from runtime config', () => {
     const useSpy = vi.fn()
     const nuxtApp = {
       vueApp: { use: useSpy },
     }
 
-    nuxtPlugin(nuxtApp as never)
+    runtimePlugin(nuxtApp as never)
 
     expect(useSpy).toHaveBeenCalledOnce()
     const [installedPlugin] = useSpy.mock.calls[0]
