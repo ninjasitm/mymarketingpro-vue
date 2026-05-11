@@ -31,8 +31,8 @@
     "type-check": "vue-tsc --build --force"
   },
   "peerDependencies": {
-    "@nuxt/kit": ">=3.0.0",
-    "nuxt": ">=3.0.0",
+    "@nuxt/kit": "^3.0.0 || ^4.0.0",
+    "nuxt": "^3.0.0 || ^4.0.0",
     "vue": "^3.3.0"
   },
   "peerDependenciesMeta": {
