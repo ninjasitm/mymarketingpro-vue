@@ -8,6 +8,7 @@ export default defineConfig({
   plugins: [
     vue(),
     dts({
+      tsconfigPath: './tsconfig.app.json',
       include: ['src/**/*.ts', 'src/**/*.vue'],
       beforeWriteFile: (filePath, content) => ({
         filePath: filePath.replace('/src/', '/'),

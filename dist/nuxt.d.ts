@@ -1,2 +1,2 @@
-declare const _default: any;
+declare const _default: NuxtModule<TOptions, TOptions, false>;
 export default _default;

@@ -30,21 +30,19 @@
     "format": "prettier --write src/",
     "type-check": "vue-tsc --build --force"
   },
+  "dependencies": {
+    "@nuxt/kit": "^3.0.0 || ^4.0.0"
+  },
   "peerDependencies": {
-    "@nuxt/kit": "^3.0.0 || ^4.0.0",
     "nuxt": "^3.0.0 || ^4.0.0",
     "vue": "^3.3.0"
   },
   "peerDependenciesMeta": {
     "nuxt": {
       "optional": true
-    },
-    "@nuxt/kit": {
-      "optional": true
     }
   },
   "devDependencies": {
-    "@nuxt/kit": "^4.4.5",
     "@rushstack/eslint-patch": "^1.16.1",
     "@tsconfig/node20": "^20.1.9",
     "@types/node": "^20.0.0",
