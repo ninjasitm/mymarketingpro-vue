@@ -9,11 +9,12 @@ import type { MyMarketingProPluginOptions } from '../types'
 
 export default defineNuxtPlugin((nuxtApp) => {
   const runtimeConfig = useRuntimeConfig()
-  const legacyPixelId = runtimeConfig.mmpApiKey as string | undefined
 
   const options: MyMarketingProPluginOptions = {
     baseUrl: runtimeConfig.public?.mmpBaseUrl as string | undefined,
-    pixelId: (runtimeConfig.public?.mmpPixelId as string | undefined) ?? legacyPixelId,
+    pixelId:
+      (runtimeConfig.public?.mmpPixelId as string | undefined) ??
+      (runtimeConfig.mmpApiKey as string | undefined),
     locale: runtimeConfig.public?.mmpLocale as string | undefined,
   }
 
