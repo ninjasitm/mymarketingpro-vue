@@ -1,6 +1,6 @@
 {
   "name": "mymarketingpro-vue",
-  "version": "0.3.0",
+  "version": "0.3.1",
   "description": "Vue 3 plugin for MyMarketingPro.com",
   "type": "module",
   "main": "./dist/mymarketingpro-vue.cjs",
@@ -41,9 +41,6 @@
     "nuxt": {
       "optional": true
     }
-  },
-  "dependencies": {
-    "@nuxt/kit": "^3.0.0 || ^4.0.0"
   },
   "devDependencies": {
     "@rushstack/eslint-patch": "^1.16.1",
