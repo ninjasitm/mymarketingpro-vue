@@ -1,4 +1,4 @@
-import type { MmpFunction, MmpWindow } from '../types'
+import type { MmpWindow } from '../types'
 
 /** URL of the MyMarketingPro site-visitor tracking pixel script. */
 export const MMP_PIXEL_SCRIPT_URL =
