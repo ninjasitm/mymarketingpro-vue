@@ -1,6 +1,6 @@
 import { defineNuxtPlugin as m, useRuntimeConfig as n } from "nuxt/app";
-import { createMyMarketingPro as r } from "../mymarketingpro-vue.js";
-const a = m((p) => {
+import { c as r } from "../plugin-dshG9N5R.js";
+const l = m((p) => {
   var i, o;
   const e = n(), t = {
     baseUrl: (i = e.public) == null ? void 0 : i.mmpBaseUrl,
@@ -10,5 +10,5 @@ const a = m((p) => {
   p.vueApp.use(r(t));
 });
 export {
-  a as default
+  l as default
 };

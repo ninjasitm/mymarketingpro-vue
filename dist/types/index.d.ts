@@ -8,6 +8,17 @@ export interface MyMarketingProPluginOptions {
     apiKey?: string;
     /** Default locale */
     locale?: string;
+    /**
+     * MyMarketingPro site-visitor pixel ID (e.g. `"mmp_45a1659a044e96cf380015d4"`).
+     * When provided the pixel script is injected automatically on plugin install.
+     */
+    pixelId?: string;
+    /**
+     * Whether to fire an initial `trackPageview` call immediately after injecting
+     * the pixel. Defaults to `true` when `pixelId` is set. Set to `false` if you
+     * want to call `useMmp().trackPageview()` manually (e.g. after router navigation).
+     */
+    trackPageview?: boolean;
 }
 /**
  * API response wrapper
