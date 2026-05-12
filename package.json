@@ -42,6 +42,9 @@
       "optional": true
     }
   },
+  "dependencies": {
+    "@nuxt/kit": "^3.0.0 || ^4.0.0"
+  },
   "devDependencies": {
     "@rushstack/eslint-patch": "^1.16.1",
     "@tsconfig/node20": "^20.1.9",
