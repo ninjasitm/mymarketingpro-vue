@@ -6,9 +6,9 @@
 //   })
 //
 // Runtime config keys read by the plugin (all optional):
+//   runtimeConfig.public.mmpPixelId  — site-visitor pixel ID
 //   runtimeConfig.public.mmpBaseUrl  — public API base URL
 //   runtimeConfig.public.mmpLocale   — default locale
-//   runtimeConfig.mmpApiKey          — private API key (server-side only)
 
 import { defineNuxtModule, addPlugin, createResolver } from '@nuxt/kit'
 
