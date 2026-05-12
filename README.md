@@ -57,6 +57,7 @@ export default defineNuxtConfig({
 | Runtime config key                  | Visibility      | Description                      |
 | ----------------------------------- | --------------- | -------------------------------- |
 | `runtimeConfig.public.mmpPixelId`   | Client + Server | Site-visitor pixel ID            |
+| `runtimeConfig.mmpApiKey`           | Server          | Legacy pixel ID fallback (deprecated) |
 | `runtimeConfig.public.mmpBaseUrl`   | Client + Server | Base URL for the MMP API         |
 | `runtimeConfig.public.mmpLocale`    | Client + Server | Default locale (e.g. `en-US`)    |
 

@@ -7,6 +7,7 @@
 //
 // Runtime config keys read by the plugin (all optional):
 //   runtimeConfig.public.mmpPixelId  — site-visitor pixel ID
+//   runtimeConfig.mmpApiKey          — legacy pixel ID fallback (deprecated)
 //   runtimeConfig.public.mmpBaseUrl  — public API base URL
 //   runtimeConfig.public.mmpLocale   — default locale
 
