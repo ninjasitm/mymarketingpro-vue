@@ -1,14 +1,14 @@
-import { defineNuxtPlugin as m, useRuntimeConfig as n } from "nuxt/app";
-import { c as r } from "../plugin-BhnOW6Gp.js";
-const l = m((p) => {
-  var i, o;
-  const e = n(), t = {
+import { defineNuxtPlugin as t, useRuntimeConfig as n } from "nuxt/app";
+import { c as u } from "../plugin-BhnOW6Gp.js";
+const s = t((m) => {
+  var i, p, o;
+  const e = n(), l = {
     baseUrl: (i = e.public) == null ? void 0 : i.mmpBaseUrl,
-    apiKey: e.mmpApiKey,
+    pixelId: ((p = e.public) == null ? void 0 : p.mmpPixelId) ?? e.mmpApiKey,
     locale: (o = e.public) == null ? void 0 : o.mmpLocale
   };
-  p.vueApp.use(r(t));
+  m.vueApp.use(u(l));
 });
 export {
-  l as default
+  s as default
 };

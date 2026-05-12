@@ -44,11 +44,9 @@ export default defineNuxtConfig({
   modules: ['mymarketingpro-vue/nuxt'],
 
   runtimeConfig: {
-    // Server-side only (private)
-    mmpApiKey: process.env.MMP_API_KEY,
-
     public: {
       // Exposed to the client
+      mmpPixelId: process.env.MMP_PIXEL_ID,
       mmpBaseUrl: process.env.MMP_BASE_URL,
       mmpLocale: process.env.MMP_LOCALE,
     },
@@ -58,7 +56,8 @@ export default defineNuxtConfig({
 
 | Runtime config key                  | Visibility      | Description                      |
 | ----------------------------------- | --------------- | -------------------------------- |
-| `runtimeConfig.mmpApiKey`           | Server-side     | Private API key                  |
+| `runtimeConfig.public.mmpPixelId`   | Client + Server | Site-visitor pixel ID            |
+| `runtimeConfig.mmpApiKey`           | Server          | Legacy pixel ID fallback (deprecated) |
 | `runtimeConfig.public.mmpBaseUrl`   | Client + Server | Base URL for the MMP API         |
 | `runtimeConfig.public.mmpLocale`    | Client + Server | Default locale (e.g. `en-US`)    |
 

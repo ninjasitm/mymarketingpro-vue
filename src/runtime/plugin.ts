@@ -12,7 +12,9 @@ export default defineNuxtPlugin((nuxtApp) => {
 
   const options: MyMarketingProPluginOptions = {
     baseUrl: runtimeConfig.public?.mmpBaseUrl as string | undefined,
-    apiKey: runtimeConfig.mmpApiKey as string | undefined,
+    pixelId:
+      (runtimeConfig.public?.mmpPixelId as string | undefined) ??
+      (runtimeConfig.mmpApiKey as string | undefined),
     locale: runtimeConfig.public?.mmpLocale as string | undefined,
   }
 

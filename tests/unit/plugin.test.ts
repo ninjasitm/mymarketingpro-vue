@@ -1,7 +1,8 @@
-import { describe, it, expect, vi, beforeEach } from 'vitest'
+import { describe, it, expect, vi, beforeEach, afterEach } from 'vitest'
 import { createApp } from 'vue'
 import { createMyMarketingPro, MyMarketingProPlugin } from '../../src'
 import type { MmpWindow } from '../../src/types'
+import * as nuxtAppModule from 'nuxt/app'
 
 // nuxt/app is aliased to the stub in vitest config
 import runtimePlugin from '../../src/runtime/plugin'
@@ -140,6 +141,23 @@ describe('Nuxt module (src/nuxt.ts)', () => {
 })
 
 describe('Nuxt runtime plugin (src/runtime/plugin.ts)', () => {
+  beforeEach(() => {
+    const win = window as MmpWindow
+    delete win.mmp
+    delete win.MmpTracker
+    document.querySelectorAll('#mmp').forEach((el) => el.remove())
+  })
+
+  afterEach(() => {
+    vi.restoreAllMocks()
+  })
+
+  const getInitPixelId = (): string | undefined => {
+    const win = window as MmpWindow
+    const initCall = win.mmp?.q?.find((args) => args[0] === 'init')
+    return initCall?.[1] as string | undefined
+  }
+
   it('calls vueApp.use with the plugin created from runtime config', () => {
     const useSpy = vi.fn()
     const nuxtApp = {
@@ -151,5 +169,46 @@ describe('Nuxt runtime plugin (src/runtime/plugin.ts)', () => {
     expect(useSpy).toHaveBeenCalledOnce()
     const [installedPlugin] = useSpy.mock.calls[0]
     expect(installedPlugin).toHaveProperty('install')
+  })
+
+  it('maps runtimeConfig.public.mmpPixelId to plugin pixelId', () => {
+    vi.spyOn(nuxtAppModule, 'useRuntimeConfig').mockReturnValue({
+      public: {
+        mmpPixelId: 'mmp_public_pixel_id',
+      },
+      mmpApiKey: 'legacy_pixel_id',
+    })
+
+    const app = createApp({})
+    const useSpy = vi.spyOn(app, 'use')
+    runtimePlugin({ vueApp: app } as never)
+
+    expect(useSpy).toHaveBeenCalledOnce()
+    expect(getInitPixelId()).toBe('mmp_public_pixel_id')
+    expect(getInitPixelId()).not.toBe('legacy_pixel_id')
+  })
+
+  it('falls back to runtimeConfig.mmpApiKey when mmpPixelId is missing', () => {
+    vi.spyOn(nuxtAppModule, 'useRuntimeConfig').mockReturnValue({
+      public: {},
+      mmpApiKey: 'legacy_pixel_id',
+    })
+
+    const app = createApp({})
+    runtimePlugin({ vueApp: app } as never)
+
+    expect(getInitPixelId()).toBe('legacy_pixel_id')
+  })
+
+  it('uses undefined pixelId when both runtime config keys are missing', () => {
+    vi.spyOn(nuxtAppModule, 'useRuntimeConfig').mockReturnValue({
+      public: {},
+    })
+
+    const app = createApp({})
+    runtimePlugin({ vueApp: app } as never)
+
+    expect(getInitPixelId()).toBeUndefined()
+    expect(document.getElementById('mmp')).toBeNull()
   })
 })
