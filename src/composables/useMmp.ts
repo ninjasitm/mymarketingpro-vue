@@ -1,4 +1,4 @@
-import type { MmpWindow } from '../types'
+import type { MmpWindow, UseMmpReturn } from '../types'
 
 /**
  * Composable for interacting with the MyMarketingPro tracking pixel (`window.mmp`).
@@ -18,7 +18,7 @@ import type { MmpWindow } from '../types'
  * track('ButtonClick', { label: 'sign-up' })
  * ```
  */
-export function useMmp() {
+export function useMmp(): UseMmpReturn {
   /**
    * Low-level helper — calls `window.mmp(command, ...args)`.
    * Safe to call before the pixel script has finished loading; commands are

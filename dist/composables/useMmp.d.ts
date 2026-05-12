@@ -1,3 +1,5 @@
+import { UseMmpReturn } from '../types';
+
 /**
  * Composable for interacting with the MyMarketingPro tracking pixel (`window.mmp`).
  *
@@ -16,18 +18,4 @@
  * track('ButtonClick', { label: 'sign-up' })
  * ```
  */
-export declare function useMmp(): {
-    /** Initialises the tracker with the given pixel ID. */
-    init: (pixelId: string) => void;
-    /** Tracks a pageview. */
-    trackPageview: () => void;
-    /**
-     * Tracks a custom event.
-     *
-     * @param event - Event name.
-     * @param data  - Optional event payload.
-     */
-    track: (event: string, data?: Record<string, unknown>) => void;
-    /** Low-level: issue any `mmp` command with arbitrary arguments. */
-    call: (command: string, ...args: unknown[]) => void;
-};
+export declare function useMmp(): UseMmpReturn;
