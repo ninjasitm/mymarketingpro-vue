@@ -1,6 +1,17 @@
 /**
- * Options for the MyMarketingPro Vue plugin
+ * Type of the `window.mmp` tracker function.
+ * Supports command buffering via the `.q` queue before `pixel.js` loads.
  */
+export type MmpFunction = ((...args: unknown[]) => void) & {
+    q?: unknown[][];
+};
+/**
+ * Window augmented with the MMP tracker globals.
+ */
+export type MmpWindow = typeof window & {
+    mmp?: MmpFunction;
+    MmpTracker?: string;
+};
 export interface MyMarketingProPluginOptions {
     /** Base URL for the MyMarketingPro API */
     baseUrl?: string;

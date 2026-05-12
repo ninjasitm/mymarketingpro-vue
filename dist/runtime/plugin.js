@@ -1,5 +1,5 @@
 import { defineNuxtPlugin as m, useRuntimeConfig as n } from "nuxt/app";
-import { c as r } from "../plugin-dshG9N5R.js";
+import { c as r } from "../plugin-BhnOW6Gp.js";
 const l = m((p) => {
   var i, o;
   const e = n(), t = {

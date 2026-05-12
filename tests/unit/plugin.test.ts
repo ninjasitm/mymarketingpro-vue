@@ -1,6 +1,7 @@
 import { describe, it, expect, vi, beforeEach } from 'vitest'
 import { createApp } from 'vue'
 import { createMyMarketingPro, MyMarketingProPlugin } from '../../src'
+import type { MmpWindow } from '../../src/types'
 
 // nuxt/app is aliased to the stub in vitest config
 import runtimePlugin from '../../src/runtime/plugin'
@@ -63,11 +64,6 @@ describe('createMyMarketingPro', () => {
 })
 
 describe('createMyMarketingPro — pixel injection', () => {
-  type MmpWindow = typeof window & {
-    mmp?: ((...args: unknown[]) => void) & { q?: unknown[][] }
-    MmpTracker?: string
-  }
-
   beforeEach(() => {
     const win = window as MmpWindow
     delete win.mmp

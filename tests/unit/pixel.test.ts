@@ -1,10 +1,6 @@
 import { describe, it, expect, beforeEach } from 'vitest'
 import { injectMmpPixel, MMP_PIXEL_SCRIPT_URL } from '../../src/utils/pixel'
-
-type MmpWindow = typeof window & {
-  mmp?: ((...args: unknown[]) => void) & { q?: unknown[][] }
-  MmpTracker?: string
-}
+import type { MmpWindow } from '../../src/types'
 
 describe('injectMmpPixel', () => {
   beforeEach(() => {

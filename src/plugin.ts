@@ -1,5 +1,5 @@
 import type { App, Plugin } from 'vue'
-import type { MyMarketingProPluginOptions } from './types'
+import type { MyMarketingProPluginOptions, MmpWindow } from './types'
 import { injectMmpPixel } from './utils/pixel'
 
 /**
@@ -35,8 +35,7 @@ export function createMyMarketingPro(options: MyMarketingProPluginOptions = {}):
         injectMmpPixel(options.pixelId)
 
         if (options.trackPageview !== false && typeof window !== 'undefined') {
-          const win = window as typeof window & { mmp?: (...args: unknown[]) => void }
-          win.mmp?.('trackPageview')
+          ;(window as MmpWindow).mmp?.('trackPageview')
         }
       }
     },

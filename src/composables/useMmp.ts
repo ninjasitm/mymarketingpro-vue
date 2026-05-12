@@ -1,5 +1,4 @@
-type MmpFunction = ((...args: unknown[]) => void) & { q?: unknown[][] }
-type MmpWindow = typeof window & { mmp?: MmpFunction }
+import type { MmpWindow } from '../types'
 
 /**
  * Composable for interacting with the MyMarketingPro tracking pixel (`window.mmp`).

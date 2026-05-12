@@ -1,4 +1,4 @@
-import { M as c, a as f, c as u, a as M, i as P } from "./plugin-dshG9N5R.js";
+import { M as c, a as f, c as u, a as M, i as P } from "./plugin-BhnOW6Gp.js";
 function a() {
   function t(i, ...n) {
     if (typeof window > "u") return;

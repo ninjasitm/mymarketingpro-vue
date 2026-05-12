@@ -1,9 +1,8 @@
+import type { MmpFunction, MmpWindow } from '../types'
+
 /** URL of the MyMarketingPro site-visitor tracking pixel script. */
 export const MMP_PIXEL_SCRIPT_URL =
   'https://app.mymarketingpro.com/site-visitors/pixel.js'
-
-type MmpFunction = ((...args: unknown[]) => void) & { q?: unknown[][] }
-type MmpWindow = typeof window & { mmp?: MmpFunction; MmpTracker?: string }
 
 /**
  * Injects the MyMarketingPro tracking pixel script into the page.
