@@ -36,12 +36,12 @@ app.mount('#app')
 
 ### Nuxt
 
-Register the plugin in `nuxt.config.ts`:
+Register the module in `nuxt.config.ts`:
 
 ```typescript
 // nuxt.config.ts
 export default defineNuxtConfig({
-  plugins: ['mymarketingpro-vue/nuxt'],
+  modules: ['mymarketingpro-vue/nuxt'],
 
   runtimeConfig: {
     // Server-side only (private)
@@ -70,8 +70,10 @@ All keys are optional — omit any that are not needed.
 mymarketingpro-vue/
 ├── src/
 │   ├── index.ts           # Vue plugin entry point
-│   ├── nuxt.ts            # Nuxt plugin entry point
+│   ├── nuxt.ts            # Nuxt module entry point
 │   ├── plugin.ts          # Vue plugin definition
+│   ├── runtime/
+│   │   └── plugin.ts      # Nuxt runtime plugin (registered by nuxt.ts)
 │   ├── components/        # Vue components
 │   ├── composables/       # Vue composables (useXxx)
 │   ├── services/          # API service layer

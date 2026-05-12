@@ -1,17 +1,16 @@
 {
   "extends": "@vue/tsconfig/tsconfig.dom.json",
-  "include": ["env.d.ts", "src/**/*", "src/**/*.vue"],
+  "include": ["env.d.ts", "src/**/*", "src/**/*.vue", "src/runtime/**/*"],
   "exclude": ["src/**/__tests__/*"],
   "compilerOptions": {
     "composite": true,
     "tsBuildInfoFile": "./node_modules/.tmp/tsconfig.app.tsbuildinfo",
     "baseUrl": ".",
     "paths": {
-      "@/*": ["./src/*"],
-      "#app": ["./node_modules/nuxt/dist/app/index.d.ts"],
-      "#imports": ["./node_modules/nuxt/dist/app/composables/index.d.ts"]
+      "@/*": ["./src/*"]
     },
     "declaration": true,
-    "declarationDir": "./dist"
+    "declarationDir": "./dist",
+    "skipLibCheck": true
   }
 }
