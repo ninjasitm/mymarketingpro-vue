@@ -1,13 +1,31 @@
-function a(r = {}) {
+import { M as c, a as f, c as u, a as M, i as P } from "./plugin-BhnOW6Gp.js";
+function a() {
+  function t(i, ...n) {
+    if (typeof window > "u") return;
+    const e = window;
+    typeof e.mmp == "function" && e.mmp(i, ...n);
+  }
   return {
-    install(e) {
-      e.provide("mymarketingpro-options", r), r.baseUrl && (e.config.globalProperties.$mmpBaseUrl = r.baseUrl);
-    }
+    /** Initialises the tracker with the given pixel ID. */
+    init: (i) => t("init", i),
+    /** Tracks a pageview. */
+    trackPageview: () => t("trackPageview"),
+    /**
+     * Tracks a custom event.
+     *
+     * @param event - Event name.
+     * @param data  - Optional event payload.
+     */
+    track: (i, n) => n !== void 0 ? t("track", i, n) : t("track", i),
+    /** Low-level: issue any `mmp` command with arbitrary arguments. */
+    call: t
   };
 }
-const t = a();
 export {
-  t as MyMarketingProPlugin,
-  a as createMyMarketingPro,
-  t as default
+  c as MMP_PIXEL_SCRIPT_URL,
+  f as MyMarketingProPlugin,
+  u as createMyMarketingPro,
+  M as default,
+  P as injectMmpPixel,
+  a as useMmp
 };

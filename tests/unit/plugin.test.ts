@@ -1,6 +1,7 @@
-import { describe, it, expect, vi } from 'vitest'
+import { describe, it, expect, vi, beforeEach } from 'vitest'
 import { createApp } from 'vue'
 import { createMyMarketingPro, MyMarketingProPlugin } from '../../src'
+import type { MmpWindow } from '../../src/types'
 
 // nuxt/app is aliased to the stub in vitest config
 import runtimePlugin from '../../src/runtime/plugin'
@@ -59,6 +60,52 @@ describe('createMyMarketingPro', () => {
     app2.use(createMyMarketingPro({ baseUrl: 'https://two.example.com' }))
     expect(app1.config.globalProperties.$mmpBaseUrl).toBe('https://one.example.com')
     expect(app2.config.globalProperties.$mmpBaseUrl).toBe('https://two.example.com')
+  })
+})
+
+describe('createMyMarketingPro — pixel injection', () => {
+  beforeEach(() => {
+    const win = window as MmpWindow
+    delete win.mmp
+    delete win.MmpTracker
+    document.querySelectorAll('#mmp').forEach((el) => el.remove())
+  })
+
+  it('injects the pixel script when pixelId is provided', () => {
+    const app = createApp({})
+    app.use(createMyMarketingPro({ pixelId: 'mmp_test_123' }))
+    expect(document.getElementById('mmp')).not.toBeNull()
+  })
+
+  it('sets window.MmpTracker when pixelId is provided', () => {
+    const app = createApp({})
+    app.use(createMyMarketingPro({ pixelId: 'mmp_test_123' }))
+    expect((window as MmpWindow).MmpTracker).toBe('mmp')
+  })
+
+  it('queues trackPageview by default when pixelId is provided', () => {
+    const app = createApp({})
+    app.use(createMyMarketingPro({ pixelId: 'mmp_test_123' }))
+    const win = window as MmpWindow
+    const commands = win.mmp?.q?.map((args) => args[0])
+    expect(commands).toContain('init')
+    expect(commands).toContain('trackPageview')
+  })
+
+  it('skips trackPageview when trackPageview option is false', () => {
+    const app = createApp({})
+    app.use(createMyMarketingPro({ pixelId: 'mmp_test_123', trackPageview: false }))
+    const win = window as MmpWindow
+    const commands = win.mmp?.q?.map((args) => args[0])
+    expect(commands).toContain('init')
+    expect(commands).not.toContain('trackPageview')
+  })
+
+  it('does not inject the pixel script when pixelId is omitted', () => {
+    const app = createApp({})
+    app.use(createMyMarketingPro({ baseUrl: 'https://api.mymarketingpro.com' }))
+    expect(document.getElementById('mmp')).toBeNull()
+    expect((window as MmpWindow).mmp).toBeUndefined()
   })
 })
 

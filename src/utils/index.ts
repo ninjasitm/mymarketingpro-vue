@@ -1,6 +1,1 @@
-// Export utilities as they are added
-// Example:
-// export { formatDate } from './formatDate'
-// export { debounce } from './debounce'
-
-export {}
+export { injectMmpPixel, MMP_PIXEL_SCRIPT_URL } from './pixel'

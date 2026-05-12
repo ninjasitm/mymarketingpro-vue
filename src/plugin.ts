@@ -1,5 +1,6 @@
 import type { App, Plugin } from 'vue'
-import type { MyMarketingProPluginOptions } from './types'
+import type { MyMarketingProPluginOptions, MmpWindow } from './types'
+import { injectMmpPixel } from './utils/pixel'
 
 /**
  * Creates a configured instance of the MyMarketingPro Vue plugin.
@@ -27,6 +28,15 @@ export function createMyMarketingPro(options: MyMarketingProPluginOptions = {}):
       // Expose convenience global properties
       if (options.baseUrl) {
         app.config.globalProperties.$mmpBaseUrl = options.baseUrl
+      }
+
+      // Inject the tracking pixel when a pixelId is provided
+      if (options.pixelId) {
+        injectMmpPixel(options.pixelId)
+
+        if (options.trackPageview !== false && typeof window !== 'undefined') {
+          ;(window as MmpWindow).mmp?.('trackPageview')
+        }
       }
     },
   }
